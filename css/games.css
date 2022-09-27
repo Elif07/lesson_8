@@ -1,0 +1,384 @@
+.button-game {
+   margin: 20px;
+   background-color: rgb(224, 102, 102);
+   display: inline-block;
+   padding: 15px;
+   border-radius: 20px;
+   box-shadow: 0 5px 0 #000;
+   transition: all 0.3s ease 0s;
+}
+
+.button-game:hover {
+   margin-top: 3px;
+   box-shadow: 0 2px 0 #000;
+}
+body {
+   margin: 0;
+   background-color: #969696;
+   font-family: 'Open Sans', sans-serif;
+}
+
+.node-start,
+.node-end {
+   height: 100px;
+   width: 100px;
+   position: absolute;
+   border-radius: 50px;
+}
+
+.node-path {
+   height: 50px;
+   width: 100px;
+   border-radius: 25px;
+   position: absolute;
+   top: 25%;
+   transition-delay: .3s !important;
+   transition-duration: 1s !important;
+   opacity: 0;
+}
+
+.node-start {
+   transition-duration: .5s;
+   pointer-events: none;
+}
+
+.node-end {
+   right: 0;
+   top: -50%;
+   transition-duration: .5s;
+}
+
+.node-start:hover>.node-path {
+   opacity: 1;
+   width: 600px;
+   transition-delay: .3s;
+   transition-duration: 1s;
+}
+
+.node-start:hover>.node-path>.node-end {
+   transition-delay: 1.3s;
+   opacity: 1;
+}
+
+.node-start:not(:hover) {
+   opacity: 0;
+}
+
+.medium,
+.medium>.node-path>.node-end {
+   width: 80px;
+   height: 80px;
+}
+
+.medium>.node-path {
+   height: 40px;
+   transition-delay: .3s;
+   transition-duration: 1s;
+}
+
+.hard,
+.hard>.node-path>.node-end {
+   width: 60px;
+   height: 60px;
+}
+
+.hard>.node-path {
+   height: 30px;
+   transition-delay: .3s;
+   transition-duration: 1s;
+}
+
+.harder,
+.harder>.node-path>.node-end {
+   width: 40px;
+   height: 40px;
+}
+
+.harder>.node-path {
+   height: 20px;
+   transition-delay: .3s;
+   transition-duration: 1s;
+}
+
+.hardest,
+.hardest>.node-path>.node-end {
+   width: 20px;
+   height: 20px;
+}
+
+.hardest>.node-path {
+   height: 10px;
+}
+
+#node-1 {
+   pointer-events: auto;
+   opacity: 1;
+   transform: translate(200px, 50px);
+}
+
+#node-1:hover~#node-2,
+#node-2:hover {
+   pointer-events: auto;
+}
+
+#node-2 {
+   transform: translate(700px, 50px) rotateZ(135deg);
+}
+
+#node-2:hover~#node-3,
+#node-3:hover {
+   pointer-events: auto;
+}
+
+#node-3:hover>.node-path {
+   width: 250px;
+}
+
+#node-3 {
+   transform: translate(346px, 404px) rotateZ(-90deg);
+}
+
+#node-3:hover~#node-4,
+#node-4:hover {
+   pointer-events: auto;
+}
+
+#node-4:hover>.node-path {
+   width: 250px;
+}
+
+#node-4 {
+   transform: translate(356px, 262px) rotateZ(180deg);
+}
+
+#node-4:hover~#node-5,
+#node-5:hover {
+   pointer-events: auto;
+}
+
+#node-5:hover>.node-path {
+   width: 250px;
+}
+
+#secret:hover {
+   transition-duration: 1s;
+   height: 800px;
+   width: 400px;
+   opacity: 1;
+}
+
+#node-5 {
+   transform: translate(195px, 272px) rotateZ(90deg);
+}
+
+#node-5:hover~#node-6,
+#node-6:hover {
+   pointer-events: auto;
+}
+
+#node-6:hover>.node-path {
+   width: 450px;
+}
+
+#node-6 {
+   transform: translate(205px, 471px) rotateZ(-45deg);
+}
+
+#node-6:hover~#node-7,
+#node-7:hover {
+   pointer-events: auto;
+}
+
+#node-7:hover>.node-path {
+   width: 450px;
+}
+
+#node-7 {
+   transform: translate(465px, 158px) rotateZ(90deg);
+}
+
+#node-7:hover~#node-8,
+#node-8:hover {
+   pointer-events: auto;
+}
+
+#node-8:hover>.node-path {
+   width: 450px;
+}
+
+#node-8 {
+   transform: translate(465px, 508px) rotateZ(180deg);
+}
+
+#node-8:hover~#node-9,
+#node-9:hover {
+   pointer-events: auto;
+}
+
+#node-9:hover>.node-path {
+   width: 450px;
+}
+
+#secret {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   width: 10px;
+   height: 20px;
+   background-image: url("https://i.kym-cdn.com/entries/icons/original/000/014/401/tumblr_inline_mqrh26jIU11qz4rgp.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+   opacity: 0;
+}
+
+#node-9 {
+   transform: translate(124px, 518px) rotateZ(-45deg);
+}
+
+#node-9:hover~#node-10,
+#node-10:hover {
+   pointer-events: auto;
+}
+
+#node-10:hover>.node-path {
+   width: 450px;
+}
+
+#node-10 {
+   transform: translate(386px, 255px) rotateZ(45deg);
+}
+
+#node-10:hover~#node-11,
+#node-11:hover {
+   pointer-events: auto;
+}
+
+#node-11:hover>.node-path {
+   width: 600px;
+}
+
+#node-11 {
+   transform: translate(650px, 518px) rotateZ(180deg);
+}
+
+#node-11:hover~#node-12,
+#node-12:hover {
+   pointer-events: auto;
+}
+
+#node-12:hover>.node-path {
+   width: 300px;
+   opacity: .8;
+}
+
+#node-12 {
+   transform: translate(140px, 528px) rotateZ(-90deg);
+}
+
+#node-12:hover~#node-13,
+#node-13:hover {
+   pointer-events: auto;
+}
+
+#node-13:hover>.node-path {
+   width: 600px;
+   opacity: .6;
+}
+
+#node-13 {
+   transform: translate(140px, 288px) rotateZ(0);
+}
+
+#node-13:hover~#node-14,
+#node-14:hover {
+   pointer-events: auto;
+}
+
+#node-14:hover>.node-path {
+   width: 400px;
+   opacity: .4;
+}
+
+#node-14 {
+   transform: translate(680px, 288px) rotateZ(-160deg);
+}
+
+#node-14:hover~#node-15,
+#node-15:hover {
+   pointer-events: auto;
+}
+
+#node-15:hover>.node-path {
+   width: 300px;
+   opacity: .1;
+}
+
+#node-15 {
+   transform: translate(381px, 193px) rotateZ(180deg);
+}
+
+#node-15:hover~#prize,
+#prize:hover {
+   pointer-events: auto;
+   transition-duration: 1.8s;
+   width: 600px;
+   height: 600px;
+   opacity: 1;
+   transform: translate(50px, 50px) rotateZ(0);
+   border-radius: 300px;
+}
+
+#prize {
+   position: absolute;
+   width: 100px;
+   height: 100px;
+   border-radius: 50px;
+   transform: translate(400px, 265px);
+   background-image: url("https://i.imgur.com/rnwI6pF.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+   opacity: 0;
+   pointer-events: none;
+}
+
+.start-here {
+   background: none;
+   color: white;
+   font-size: 30px;
+   word-wrap: break-word;
+   width: 250px;
+   position: absolute;
+   text-align: center;
+}
+
+.white,
+.white div {
+   background-color: white;
+}
+
+.red,
+.red div {
+   background-color: #c83349;
+}
+
+.yellow,
+.yellow div {
+   background-color: #ffcc5c;
+}
+
+.green,
+.green div {
+   background-color: #34A853;
+}
+
+.blue,
+.blue div {
+   background-color: #4285F4;
+}
+
+.orange,
+.orange div {
+   background-color: #FF9900;
+}
